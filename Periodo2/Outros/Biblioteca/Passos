@@ -1,0 +1,8 @@
+gcc -g -c -Wall __nome.da.bibliteca__.c -o __nome.da.bibliteca__.o  #para criar o "Arquivo de objeto compilado" da biblioteca
+(...) #repetir processo para todas as bibliotecas 
+
+gcc -g -c -Wall __nome.da.bibliteca__.c -o __nome.da.main__.o  #para criar o "Arquivo de objeto compilado" da main !OPCIONAL!
+
+gcc __nome.das.biblitecas__.o (...) __nome.da.main__(.o)(.c) #criar o executavel na __nome.da.main__ pode ser.c ou .o dependendo se foi criado ou não o arquivo de objeto compilado para ela
+
+./a.out #executar o executavel
