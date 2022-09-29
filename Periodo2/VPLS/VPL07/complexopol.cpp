@@ -53,8 +53,9 @@ Complexo Complexo::inverso() {
   double a,b;
   a = cos(imag_)*real_;
   b = sin(imag_)*real_;
-  i.imag_ = atan(b/a);
-  i.real_ = real_;
+  double denominador = pow(a,2) - pow(b,2);
+  i.imag_ = a/denominador;
+  i.real_ = b/denominador;
   return i;
 }
 
