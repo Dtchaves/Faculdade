@@ -6,6 +6,18 @@
 
 
 void Racional::Normalizar() {
+  int nume =  numerador_;
+  int deno = denominador_;
+  for (int i = abs((int) fmin(nume,deno)); i > 1 ;i--)
+  {
+    if(!(nume % i || deno %i))
+    {
+      numerador_ = nume/i;
+      denominador_ = deno/i;
+      break;
+    }
+  }
+  if(denominador_ < 0) denominador_ *= - 1; 
 }
 
 Racional::Racional() {
@@ -33,87 +45,39 @@ int Racional::denominador() const {
 }
 
 Racional Racional::simetrico() const{
-  int nume =  numerador_;
-  int deno = denominador_;
-
-  for (int i = abs((int) fmin(nume,deno)); i > 1 ;i--)
-  {
-    if(!(nume % i || deno %i))
-    {
-      nume = nume/i;
-      deno = deno/i;
-      break;
-    }
-  }
-
-  return Racional(-nume,deno);
+  Racional aux( -numerador_,denominador_);
+  aux.Normalizar();
+  return Racional(aux.numerador_, aux.denominador_);
 }
 
 Racional Racional::somar(Racional k) const {
-  int deno =  denominador_ * k.denominador_;
-  int nume = (numerador_ * k.denominador_) + (denominador_* k.numerador_) ;
 
-  for (int i = abs((int) fmin(nume,deno)); i > 1 ;i--)
-  {
-    if(!(nume % i || deno %i))
-    {
-      nume = nume/i;
-      deno = deno/i;
-      break;
-    }
-  }
-
-  return Racional(nume, deno);
+  Racional aux( ((numerador_ * k.denominador_) + (denominador_* k.numerador_)), (denominador_ * k.denominador_) );
+  aux.Normalizar();
+  return Racional(aux.numerador_, aux.denominador_);
 }
 
 Racional Racional::subtrair(Racional k) const {
-  int deno =  denominador_ * k.denominador_;
-  int nume = (numerador_ * k.denominador_) - (denominador_* k.numerador_) ;
 
-  for (int i = abs((int) fmin(nume,deno)); i > 1 ;i--)
-  {
-    if(!(nume % i || deno %i))
-    {
-      nume = nume/i;
-      deno = deno/i;
-      break;
-    }
-  }
+  Racional aux( ((numerador_ * k.denominador_) - (denominador_* k.numerador_)), (denominador_ * k.denominador_) );
+  aux.Normalizar();
 
-  return Racional(nume, deno);
+  return Racional(aux.numerador_, aux.denominador_);
 }
 
 Racional Racional::multiplicar(Racional k) const {
-  int nume =  numerador_* k.numerador_;
-  int deno = denominador_ * k.denominador_;
 
-  for (int i = abs((int) fmin(nume,deno)); i > 1 ;i--)
-  {
-    if(!(nume % i || deno %i))
-    {
-      nume = nume/i;
-      deno = deno/i;
-      break;
-    }
-  }
+  Racional aux( (numerador_* k.numerador_), (denominador_ * k.denominador_) );
+  aux.Normalizar();
 
-  return Racional(nume,deno);
+  return Racional(aux.numerador_, aux.denominador_);
 }
 
 Racional Racional::dividir(Racional k) const {
-  int nume =  numerador_* k.denominador_ ;
-  int deno = denominador_ * k.numerador_;
 
-  for (int i = abs((int) fmin(nume,deno)); i > 1 ;i--)
-  {
-    if(!(nume % i || deno %i))
-    {
-      nume = nume/i;
-      deno = deno/i;
-      break;
-    }
-  }
+  Racional aux( (numerador_* k.denominador_ ), (denominador_ * k.numerador_) );
+  aux.Normalizar();
 
-  return Racional(nume,deno);
+  return Racional(aux.numerador_, aux.denominador_);
 }
 
