@@ -13,7 +13,7 @@ libes: $(BUILD)/Pessoa.o $(BUILD)/Professor.o $(BUILD)/Funcionario.o  $(BUILD)/m
 
 $(BUILD)/%.o: $(CPP)/%.cpp $(HPP)/%.hpp
 	c++ -c $< -I $(HPP) -o $@
-	
+
 $(BUILD)/%.o: $(MAIN)/%.cpp 
 	c++ -c $< $(BUILD)/*.o -I $(HPP) -o $@
 	
