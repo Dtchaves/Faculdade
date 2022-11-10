@@ -1,0 +1,7 @@
+Memory: 7,6 GiB
+Processor: Intel® Core™ i5-8265U CPU @ 1.60GHz × 8 
+Graphics: NV118 / Mesa Intel® UHD Graphics 620 (WHL GT2)
+Disk Capacity: 480,1 GB
+OS Name: Ubuntu 22.04.1 LTS
+OS Type: 64-bit
+Compiler: gcc (Ubuntu 11.3.0-1ubuntu1~22.04) 11.3.0
