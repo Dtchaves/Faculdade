@@ -1,0 +1,97 @@
+Um char* sempre tem uma vaga a mais destina ao NULL no final. Nesse caso o código está errado em atribuir a essa última 
+vaga o valor '/0'.
+
+Antes da correção = 
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...
+(gdb) run 
+
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[Inferior 1 (process 262703) exited normally]
+
+
+
+==262710== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==262710== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==262710== Command: ./a.out
+==262710== 
+==262710== Invalid write of size 1
+==262710==    at 0x1091BC: main (c7.c:10)
+==262710==  Address 0x4a9a05a is 0 bytes after a block of size 26 alloc'd
+==262710==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==262710==    by 0x109183: main (c7.c:5)
+==262710== 
+==262710== 
+==262710== HEAP SUMMARY:
+==262710==     in use at exit: 0 bytes in 0 blocks
+==262710==   total heap usage: 1 allocs, 1 frees, 26 bytes allocated
+==262710== 
+==262710== All heap blocks were freed -- no leaks are possible
+==262710== 
+==262710== For lists of detected and suppressed errors, rerun with: -s
+==262710== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+diogo@diogo-Lenovo:~/Documentos/Faculdade/Códigos/Periodo3/ESTRU
+TURA_DE_DADOS/aulapratica3/C7$ exit
+
+
+Script done on 2023-04-07 19:01:39-03:00 [COMMAND_EXIT_CODE="0"]
+
+
+
+Depois da correção = 
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...
+(gdb) run
+
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[Inferior 1 (process 262787) exited normally]
+
+
+
+==262790== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==262790== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==262790== Command: ./a.out
+==262790== 
+==262790== 
+==262790== HEAP SUMMARY:
+==262790==     in use at exit: 0 bytes in 0 blocks
+==262790==   total heap usage: 1 allocs, 1 frees, 27 bytes allocated
+==262790== 
+==262790== All heap blocks were freed -- no leaks are possible
+==262790== 
+==262790== For lists of detected and suppressed errors, rerun with: -s
+==262790== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+diogo@diogo-Lenovo:~/Documentos/Faculdade/Códigos/Periodo3/ESTRU
+TURA_DE_DADOS/aulapratica3/C7$ exit
+
+
+Script done on 2023-04-07 19:03:03-03:00 [COMMAND_EXIT_CODE="0"]
+

@@ -1,0 +1,104 @@
+O código está errado por tem o valor '0' como denominador
+
+Antes da correção = 
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...
+(gdb) run
+
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Program received signal SIGFPE, Arithmetic exception.
+0x000055555555513b in actual_calc (a=13, b=0) at c16.c:6
+6	  c=a/b;
+
+
+
+	Inferior 1 [process 266476] will be killed.
+
+Quit anyway? (y or n) y
+
+
+==266486== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==266486== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==266486== Command: ./a.out
+==266486== 
+==266486== 
+==266486== Process terminating with default action of signal 8 (SIGFPE)
+==266486==  Integer divide by zero at address 0x1002D87049
+==266486==    at 0x10913B: actual_calc (c16.c:6)
+==266486==    by 0x109170: calc (c16.c:15)
+==266486==    by 0x109189: main (c16.c:20)
+==266486== 
+==266486== HEAP SUMMARY:
+==266486==     in use at exit: 0 bytes in 0 blocks
+==266486==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==266486== 
+==266486== All heap blocks were freed -- no leaks are possible
+==266486== 
+==266486== For lists of detected and suppressed errors, rerun with: -s
+==266486== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+Floating point exception (core dumped)
+diogo@diogo-Lenovo:~/Documentos/Faculdade/Códigos/Periodo3/ESTR
+UTURA_DE_DADOS/aulapratica3/C16$ exit
+
+
+Script done on 2023-04-07 20:17:18-03:00 [COMMAND_EXIT_CODE="136"]
+
+
+
+Depois da correção = 
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...
+(gdb) run
+
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[Inferior 1 (process 266656) exited normally]
+
+
+
+==266659== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==266659== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==266659== Command: ./a.out
+==266659== 
+==266659== 
+==266659== HEAP SUMMARY:
+==266659==     in use at exit: 0 bytes in 0 blocks
+==266659==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==266659== 
+==266659== All heap blocks were freed -- no leaks are possible
+==266659== 
+==266659== For lists of detected and suppressed errors, rerun with: -s
+==266659== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+diogo@diogo-Lenovo:~/Documentos/Faculdade/Códigos/Periodo3/ESTR
+UTURA_DE_DADOS/aulapratica3/C16$ exit
+
+
+Script done on 2023-04-07 20:19:57-03:00 [COMMAND_EXIT_CODE="0"]
