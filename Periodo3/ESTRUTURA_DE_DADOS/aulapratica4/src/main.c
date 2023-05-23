@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <time.h>
 
-#define LIMITE 10
+#define LIMITE 10000
 
 int Ja_Foi(int* Valores_Ja_Gerados,int Valor){
     int i;

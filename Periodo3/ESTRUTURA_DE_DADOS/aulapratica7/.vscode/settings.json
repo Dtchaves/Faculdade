@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "tempo.h": "c",
+        "stdlib.h": "c"
+    }
+}
