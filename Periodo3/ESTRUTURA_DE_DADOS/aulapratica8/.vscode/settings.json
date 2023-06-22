@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "msgassert.h": "c",
+        "stdio.h": "c"
+    }
+}

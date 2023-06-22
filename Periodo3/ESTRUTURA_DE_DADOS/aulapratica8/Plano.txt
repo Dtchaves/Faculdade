@@ -1,0 +1,13 @@
+Aula Prática 8 - Plano - TN
+Diogo Tuler Chaves
+
+    Para essa atividade prática foi escolhido o código da atividade prática 7, na qual vários vetores de tamanhos diferentes
+são ordenados utilizando algoritmos diferentes.
+
+1- Esse vetor alocado dinâmicamente vai ser a estrutura analizada.
+2- Todas as ordenações vão ser analisadas individualmente sendo necessário a instrumentadação de suas funções.
+3- Cada tipo de ordenação vai ser uma fase diferente, tendo como objetivo a análise os diferentes comportamentos das ordenações
+4- O código sera enviado em uma pasta zipada junto com esse plano. Todavia as alterações para instrumentação ainda não foram propriamente realizadas.
+Ainda estou análisando sobre a melhor abordagem e estudando sobre formas mais eficientes para o uso. Ao que tudo indica existira uma definição
+de nova fase dentro de cada uma das ordenações. Foi definido "#define _POSIX_C_SOURCE 199309L" na memlog.c para definir a versão do POSIX, fazendo com 
+ que o "CLOCK_MONOTONIC" funcione normalmente.
