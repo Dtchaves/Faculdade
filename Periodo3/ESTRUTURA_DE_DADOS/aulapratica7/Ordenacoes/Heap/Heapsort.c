@@ -1,4 +1,4 @@
-#include <../include/Heapsort.h>
+#include <Heapsort.h>
 
 void Arruma(int Raiz, int Ultima_vaga,int* Vetor){
     int Filho =((Raiz+1)*2) - 1; /*Começa sendo o filho da esquerda*/

@@ -29,16 +29,7 @@ typedef struct Arquivo_Invalido{
     string Invalido;
 }Arquivo_Invalido;
 
-/*Struct para armazenar os dados de entrada em um vetor de pontos e seu tamanho*/
-typedef struct Vetor_de_Ponto_e_seu_Tamanho{
-    Ponto* Vetor_Pontos;
-    int Tamanho;
-}Pontos_Quantidade;
-
 /*Função para abrir o arquivo lido na linha de comando enviando exceções quando necessário*/
 ifstream Abre_Arquivo(int argc,char ** argv);
-
-/*Função para ler o arquivo e retornar uma Pilha de pontos*/
-Pontos_Quantidade* Le_Arquivo(ifstream* Arquivo_de_Entrada);
 
 #endif
