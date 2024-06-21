@@ -1,0 +1,15 @@
+------------------------------------------------------
+|                                                    |
+|       Universidade Federal de Minas Gerais  	     |
+|       Departamento de Ciência da Computação        |
+|                                                    |
+|                Trabalho Prático 1                  |
+|                                                    |
+| Nome: Diogo Tuler Chaves                           |
+|                                                    |
+| Matrícula: 2022034663                              |
+|                                                    |
+| Disciplina: Organização de Computadores 1          |
+|                                                    |
+------------------------------------------------------
+

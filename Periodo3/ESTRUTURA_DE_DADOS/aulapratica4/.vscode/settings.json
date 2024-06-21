@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "lista_circular.h": "c",
+        "stdlib.h": "c",
+        "stdio.h": "c",
+        "fila_circular.h": "c"
+    }
+}

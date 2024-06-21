@@ -1,0 +1,117 @@
+Temos três problemas com esse código.Primeiramente, a estrutura Matriz chamada rotation3D não foi alocada,
+o segundo problema é que os dados da variável data da estrutura rotation3D foram alocados dinamicamente mas não foram 
+desalocados e o terceiro problema é que o ponteiro text foi desalocado sem ter sido previamente alocado.
+
+Antes da correção = 
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...
+(gdb) run
+
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Program received signal SIGSEGV, Segmentation fault.
+0x00007ffff7ca547e in __GI___libc_free (mem=0x64) at ./malloc/malloc.c:3368
+3368	./malloc/malloc.c: No such file or directory.
+
+
+
+	Inferior 1 [process 260257] will be killed.
+
+Quit anyway? (y or n) y
+
+
+==260268== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==260268== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==260268== Command: ./a.out
+==260268== 
+==260268== Use of uninitialised value of size 8
+==260268==    at 0x10917A: main (c4.c:13)
+==260268== 
+==260268== Invalid write of size 4
+==260268==    at 0x10917A: main (c4.c:13)
+==260268==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==260268== 
+==260268== 
+==260268== Process terminating with default action of signal 11 (SIGSEGV)
+==260268==  Access not within mapped region at address 0x0
+==260268==    at 0x10917A: main (c4.c:13)
+==260268==  If you believe this happened as a result of a stack
+==260268==  overflow in your program's main thread (unlikely but
+==260268==  possible), you can try to increase the size of the
+==260268==  main thread stack using the --main-stacksize= flag.
+==260268==  The main thread stack size used in this run was 8388608.
+==260268== 
+==260268== HEAP SUMMARY:
+==260268==     in use at exit: 0 bytes in 0 blocks
+==260268==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==260268== 
+==260268== All heap blocks were freed -- no leaks are possible
+==260268== 
+==260268== Use --track-origins=yes to see where uninitialised values come from
+==260268== For lists of detected and suppressed errors, rerun with: -s
+==260268== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+Segmentation fault (core dumped)
+diogo@diogo-Lenovo:~/Documentos/Faculdade/Códigos/Periodo3/ESTRU
+TURA_DE_DADOS/aulapratica3/C4$ exit
+
+
+Script done on 2023-04-07 18:09:24-03:00 [COMMAND_EXIT_CODE="139"]
+
+
+
+Depois da correção = 
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...
+(gdb) run
+
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+[Inferior 1 (process 261199) exited normally]
+
+
+
+==261202== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==261202== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==261202== Command: ./a.out
+==261202== 
+==261202== 
+==261202== HEAP SUMMARY:
+==261202==     in use at exit: 0 bytes in 0 blocks
+==261202==   total heap usage: 6 allocs, 6 frees, 112 bytes allocated
+==261202== 
+==261202== All heap blocks were freed -- no leaks are possible
+==261202== 
+==261202== For lists of detected and suppressed errors, rerun with: -s
+==261202== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+diogo@diogo-Lenovo:~/Documentos/Faculdade/Códigos/Periodo3/ESTRU
+TURA_DE_DADOS/aulapratica3/C4$ exit
+
+
+Script done on 2023-04-07 18:22:32-03:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,123 @@
+O segundo for do código vai gerar problema pois acessa uma vaga na memória que não foi
+atribuída valor.O for anterior dá valores para 'a[i]' até o 'i'<9, dessa forma ao a[9] não foi
+atribuído nada.
+
+Antes da correção = 
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...
+(gdb) run
+
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0 1 2 3 4 5 6 7 8 0 
+[Inferior 1 (process 258992) exited normally]
+
+
+
+==258997== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==258997== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==258997== Command: ./a.out
+==258997== 
+==258997== Conditional jump or move depends on uninitialised value(s)
+==258997==    at 0x48E5B56: __vfprintf_internal (vfprintf-internal.c:1516)
+==258997==    by 0x48CF81E: printf (printf.c:33)
+==258997==    by 0x1091F1: main (c2.c:11)
+==258997== 
+==258997== Use of uninitialised value of size 8
+==258997==    at 0x48C933B: _itoa_word (_itoa.c:177)
+==258997==    by 0x48E4B3D: __vfprintf_internal (vfprintf-internal.c:1516)
+==258997==    by 0x48CF81E: printf (printf.c:33)
+==258997==    by 0x1091F1: main (c2.c:11)
+==258997== 
+==258997== Conditional jump or move depends on uninitialised value(s)
+==258997==    at 0x48C934C: _itoa_word (_itoa.c:177)
+==258997==    by 0x48E4B3D: __vfprintf_internal (vfprintf-internal.c:1516)
+==258997==    by 0x48CF81E: printf (printf.c:33)
+==258997==    by 0x1091F1: main (c2.c:11)
+==258997== 
+==258997== Conditional jump or move depends on uninitialised value(s)
+==258997==    at 0x48E5643: __vfprintf_internal (vfprintf-internal.c:1516)
+==258997==    by 0x48CF81E: printf (printf.c:33)
+==258997==    by 0x1091F1: main (c2.c:11)
+==258997== 
+==258997== Conditional jump or move depends on uninitialised value(s)
+==258997==    at 0x48E4C85: __vfprintf_internal (vfprintf-internal.c:1516)
+==258997==    by 0x48CF81E: printf (printf.c:33)
+==258997==    by 0x1091F1: main (c2.c:11)
+==258997== 
+0 1 2 3 4 5 6 7 8 0 
+==258997== 
+==258997== HEAP SUMMARY:
+==258997==     in use at exit: 0 bytes in 0 blocks
+==258997==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+==258997== 
+==258997== All heap blocks were freed -- no leaks are possible
+==258997== 
+==258997== Use --track-origins=yes to see where uninitialised values come from
+==258997== For lists of detected and suppressed errors, rerun with: -s
+==258997== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
+diogo@diogo-Lenovo:~/Documentos/Faculdade/Códigos/Periodo3/ESTRU
+TURA_DE_DADOS/aulapratica3/C2$ exit
+
+
+Script done on 2023-04-07 17:48:17-03:00 [COMMAND_EXIT_CODE="0"]
+
+
+
+Depois da correção = 
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...
+(gdb) run
+
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0 1 2 3 4 5 6 7 8 9 
+[Inferior 1 (process 259066) exited normally]
+
+
+
+==259069== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==259069== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==259069== Command: ./a.out
+==259069== 
+0 1 2 3 4 5 6 7 8 9 
+==259069== 
+==259069== HEAP SUMMARY:
+==259069==     in use at exit: 0 bytes in 0 blocks
+==259069==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+==259069== 
+==259069== All heap blocks were freed -- no leaks are possible
+==259069== 
+==259069== For lists of detected and suppressed errors, rerun with: -s
+==259069== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+diogo@diogo-Lenovo:~/Documentos/Faculdade/Códigos/Periodo3/ESTRU
+TURA_DE_DADOS/aulapratica3/C2$ exit
+
+
+Script done on 2023-04-07 17:49:46-03:00 [COMMAND_EXIT_CODE="0"]
